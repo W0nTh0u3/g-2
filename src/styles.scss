@@ -1,1 +1,88 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --background-blue: #3fc8eb;
+    --background-gray: #f5f5f5;
+    --font-text-size: 1rem;
+}
+
+body,
+html {
+    margin: 0;
+    font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.custom-input {
+    display: flex;
+    font-size: var(--font-text-size);
+    $padding-size: calc(var(--font-text-size)/2);
+    color: #ffffff;
+
+    @mixin default {
+        border: 2px solid #ffffff;
+        box-sizing: border-box;
+        background-color: transparent;
+        padding: $padding-size;
+        font-size: var(--font-text-size);
+        color: #ffffff;
+        width: 100%;
+        height: calc($padding-size + 4px + var(--font-text-size) + calc(.875rem - 1px));
+
+        &:focus {
+            outline: none;
+        }
+
+        &::placeholder {
+            color: #ffffff;
+        }
+    }
+
+    input {
+        @include default();
+    }
+
+    textarea {
+        font-family: 'Segoe UI';
+        @include default();
+        resize: none;
+    }
+
+    select {
+        @include default();
+
+        option {
+            color: black;
+        }
+    }
+}
+
+.custom-btn {
+    align-items: center;
+    background-color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    color: var(--background-blue);
+    cursor: pointer;
+    display: flex;
+    font-size: var(--font-text-size);
+    font-weight: bold;
+    justify-content: center;
+    line-height: 1;
+    margin: 0;
+    min-height: 2rem;
+    padding: calc(.875rem - 1px) calc(1rem - 1px);
+    position: relative;
+    text-decoration: none;
+    transition: all 250ms;
+    user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    width: auto;
+
+    &.secondary {
+        background-color: var(--background-blue);
+        border: 1px solid var(--background-blue);
+        color: #ffffff;
+    }
+}
+
+
