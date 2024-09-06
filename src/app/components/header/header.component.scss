@@ -1,0 +1,103 @@
+:host {
+    display: flex;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    min-height: 80vh;
+
+    @media only screen and ((max-width: 768px) or (max-width: 1024px)) {
+        flex-direction: column;
+    }
+
+    .intro {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--background-blue);
+        padding: 3rem;
+        max-width: 45vw;
+        color: white;
+
+        @media only screen and ((max-width: 768px) or (max-width: 1024px)) {
+            max-width: 100%;
+        }
+
+        h1 {
+            font-weight: 400;
+            font-size: 5rem;
+
+            @media only screen and ((max-width: 768px)) {
+                font-size: 4rem;
+            }
+        }
+
+        h2 {
+            font-weight: 400;
+            font-size: 3rem;
+
+            @media only screen and ((max-width: 768px)) {
+                font-size: 2rem;
+            }
+        }
+
+        .logo {
+            img {
+                width: 196px;
+            }
+        }
+    }
+
+    .sub-header {
+        font-family: "National-Light";
+        font-size: 1.2rem;
+        color: black;
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        flex-grow: 1;
+        background-color: var(--background-gray);
+        padding: 3rem;
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: center;
+
+            h2 {
+                color: var(--background-blue);
+                font-size: 3rem;
+                font-weight: lighter;
+                margin-bottom: 1rem;
+
+                @media only screen and ((max-width: 768px)) {
+                    font-size: 2rem;
+                }
+            }
+
+            .underline {
+                border-bottom: 2px solid #ccc;
+                width: 100%;
+                margin-bottom: 3rem;
+            }
+
+            .row {
+                margin: 0.75rem 0;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                font-size: 2rem;
+
+                @media only screen and ((max-width: 768px)) {
+                    font-size: 1.25rem;
+                }
+
+                img {
+                    width: 0.75rem;
+                }
+            }
+        }
+    }
+}
