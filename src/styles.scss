@@ -51,7 +51,6 @@ html {
 
     select {
         @include default();
-
         option {
             color: black;
         }
@@ -91,5 +90,3 @@ html {
         color: #ffffff;
     }
 }
-
-

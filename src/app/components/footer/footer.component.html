@@ -1,15 +1,15 @@
 <section class="footer">
     <div class="newsletter">
-        <div class="content">
+        <div [formGroup]="form" class="content">
             <span class="label">Sign up to our newsletter</span>
             <div class="custom-input">
-                <input placeholder="Full Name" />
+                <input placeholder="Full Name" formControlName="fullName"/>
             </div>
             <div class="custom-input">
-                <input placeholder="Email address" />
+                <input placeholder="Email address" formControlName="email"/>
             </div>
             <div class="submit-btn">
-                <button class="custom-btn secondary">Submit</button>
+                <button class="custom-btn secondary" (click)="submit()" [disabled]="loading">{{ btnText }}</button>
             </div>
         </div>
         <div class="underline"></div>

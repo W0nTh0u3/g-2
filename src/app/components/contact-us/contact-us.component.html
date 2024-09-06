@@ -4,38 +4,41 @@
             <h2>Contact us today</h2>
             <p>Brief intro paragraph about this section. Bis porepelent quam nam ut raeptam facillo riberum sitatur aut
                 proreperiata volorer.</p>
-            <div class="grid">
+            <form [formGroup]="form" class="grid">
                 <div class="custom-input">
-                    <input placeholder="Full Name *" />
+                    <input placeholder="Full Name *" formControlName="fullName"/>
                 </div>
                 <div class="custom-input">
-                    <input placeholder="Email address *" />
+                    <input placeholder="Email address *" formControlName="email"/>
                 </div>
                 <div class="custom-input">
-                    <input placeholder="Contact number" />
+                    <input placeholder="Contact number" formControlName="contactNum"/>
                 </div>
                 <div class="custom-input">
-                    <select>
+                    <select formControlName="meeting">
                         <option hidden>Book a meeting</option>
+                        <option *ngFor="let meeting of meetings" [ngValue]="meeting.val">{{ meeting.name }}</option>
                     </select>
                 </div>
                 <div class="custom-input">
-                    <select>
+                    <select formControlName="day">
                         <option hidden>Preferred day *</option>
+                        <option *ngFor="let day of days" [ngValue]="day.val">{{ day.name }}</option>
                     </select>
                 </div>
                 <div class="custom-input">
-                    <select>
+                    <select formControlName="time">
                         <option hidden>Pereferred time *</option>
+                        <option *ngFor="let time of times" [ngValue]="time.val">{{ time.name }}</option>
                     </select>
                 </div>
                 <div class="custom-input full">
-                    <textarea type="" placeholder="Message"></textarea>
+                    <textarea type="" placeholder="Message" formControlName="message"></textarea>
                 </div>
                 <div class="submit-btn">
-                    <button class="custom-btn">Submit</button>
+                    <button class="custom-btn" (click)="submit()" [disabled]="loading">{{ btnText }}</button>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
     <div class="details">

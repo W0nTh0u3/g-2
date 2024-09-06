@@ -56,6 +56,10 @@
                     width: 80vw;
                 }
 
+                .ng-invalid:not(form):not(.ng-untouched) {
+                    border: 2px solid #a94442;
+                }
+
                 div {
                     width: 100%;
 
